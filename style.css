@@ -233,3 +233,35 @@ video::-webkit-media-controls-panel {
 video::-moz-media-controls {
   display: none !important;
 }
+
+
+/* Tablet view: 2 columns, less spacing */
+@media (max-width: 900px) {
+  .gallery-columns {
+    gap: 20px;
+    padding: 30px 5%;
+  }
+
+  .gallery-column {
+    max-width: 45%;
+  }
+}
+
+/* Phone view: 1 column */
+@media (max-width: 600px) {
+  .gallery-columns {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 5%;
+  }
+
+  .gallery-column {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .gallery-item {
+    margin-bottom: 10px;
+  }
+}
