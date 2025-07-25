@@ -68,6 +68,16 @@ nav a {
 
 }
 
+  a {
+  color: #b8c9e6;
+  font-weight: bold;
+  text-decoration: underline;
+  font-family: 'Playfair Display', serif;
+}
+
+a:hover {
+  text-decoration: bold;
+}
 nav a:hover {
   text-decoration: underline;
 }
