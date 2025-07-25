@@ -209,3 +209,19 @@ p {
 .gallery-item img:hover {
   transform: scale(1.03);
 }
+/* Hide native video controls on all platforms */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+video::-moz-media-controls {
+  display: none !important;
+}
