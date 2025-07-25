@@ -1,0 +1,128 @@
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  font-family: 'Playfair Display', serif;
+}
+
+.video-wrapper {
+  margin-top: 40px;
+}
+
+video {
+  width: 30%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top: 8%;
+  pointer-events: auto;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  appearance: none;
+}
+
+/* Hide all default controls and styling */
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+video::-moz-media-controls {
+  display: none !important;
+}
+
+h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #b8c9e6;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 25px;
+  margin-top: 0;
+
+}
+
+h2 {
+  font-size: 1.2em;
+  color: #6780b5;
+  margin-top: 20px;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 5px;
+}
+
+hr {
+  width: 60%;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #b8c9e6;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* Logo at top of about page */
+.small-logo {
+  width: 80px;
+  margin: 20px auto 10px;
+  display: block;
+}
+
+/* Adjust nav spacing under logo */
+header nav {
+  margin-bottom: 30px;
+}
+
+main{
+margin-top: 10%;
+}
+
+p{
+color:#6780b5;
+margin-left:20%;
+margin-right:20%;
+
+}
+
+.social-icon {
+  font-size: 24px;
+  color: #b8c9e6;
+  margin: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #6780b5; /* Instagram pink */
+}
+
+
+
+/* # Transitions */
+
+/* Fade transition setup */
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.fade-in {
+  opacity: 1;
+}
+
+/* Optional: make link clicks feel smooth */
+a {
+  transition: color 0.3s ease;
+}
