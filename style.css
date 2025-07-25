@@ -1,12 +1,19 @@
-
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
   text-align: center;
   margin: 0;
   padding: 0;
   background-color: #0a0a0a;
-  font-family: 'Playfair Display', serif;
+  color: #b8c9e6;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
+
+body.fade-in {
+  opacity: 1;
+}
+
+/* VIDEO */
 
 .video-wrapper {
   margin-top: 40px;
@@ -16,8 +23,7 @@ video {
   width: 30%;
   height: auto;
   display: block;
-  margin: 0 auto;
-  margin-top: 8%;
+  margin: 8% auto 0;
   pointer-events: auto;
   cursor: pointer;
   border: none;
@@ -26,32 +32,29 @@ video {
   appearance: none;
 }
 
-/* Hide all default controls and styling */
-video::-webkit-media-controls {
-  display: none !important;
-}
-
+/* Hide default video controls */
+video::-webkit-media-controls,
 video::-moz-media-controls {
   display: none !important;
 }
+
+/* HEADINGS */
 
 h1 {
   font-size: 2.5em;
   font-weight: bold;
   color: #b8c9e6;
-  font-family: 'Playfair Display', serif;
   margin-bottom: 25px;
   margin-top: 0;
-
 }
 
 h2 {
   font-size: 1.2em;
   color: #6780b5;
-  margin-top: 20px;
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 5px;
+  margin: 20px 0 5px;
 }
+
+/* DIVIDER */
 
 hr {
   width: 60%;
@@ -59,52 +62,59 @@ hr {
   border: 1px solid #ccc;
 }
 
+/* NAVIGATION */
+
 nav a {
   margin: 0 15px;
   text-decoration: none;
   color: #b8c9e6;
   font-weight: bold;
-  font-family: 'Playfair Display', serif;
-
+  transition: color 0.3s ease;
 }
 
-  a {
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* LINKS */
+
+a {
   color: #b8c9e6;
   font-weight: bold;
   text-decoration: underline;
-  font-family: 'Playfair Display', serif;
+  transition: color 0.3s ease;
 }
 
 a:hover {
   text-decoration: bold;
 }
-nav a:hover {
-  text-decoration: underline;
-}
 
+/* LOGO */
 
-/* Logo at top of about page */
 .small-logo {
   width: 80px;
   margin: 20px auto 10px;
   display: block;
 }
 
-/* Adjust nav spacing under logo */
 header nav {
   margin-bottom: 30px;
 }
 
-main{
-margin-top: 10%;
+/* LAYOUT */
+
+main {
+  margin-top: 10%;
 }
 
-p{
-color:#6780b5;
-margin-left:20%;
-margin-right:20%;
-
+p {
+  color: #6780b5;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 0 10%;
 }
+
+/* SOCIAL ICON */
 
 .social-icon {
   font-size: 24px;
@@ -115,24 +125,87 @@ margin-right:20%;
 }
 
 .social-icon:hover {
-  color: #6780b5; /* Instagram pink */
+  color: #6780b5;
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+
+@media (max-width: 768px) {
+  video {
+    width: 60%;
+    margin-top: 12%;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 10px;
+  }
+
+  p {
+    padding: 0 5%;
+  }
+
+  .small-logo {
+    width: 60px;
+  }
+
+  .social-icon {
+    font-size: 20px;
+    margin: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  video {
+    width: 80%;
+    margin-top: 15%;
+  }
+
+  h1 {
+    font-size: 1.6em;
+  }
+
+  h2 {
+    font-size: 0.95em;
+  }
+
+  p {
+    padding: 0 4%;
+    font-size: 0.95em;
+  }
+
+  .small-logo {
+    width: 50px;
+  }
 }
 
 
 
-/* # Transitions */
-
-/* Fade transition setup */
-body {
-  opacity: 0;
-  transition: opacity 0.5s ease;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 10%;
+  margin-top: 30px;
 }
 
-body.fade-in {
-  opacity: 1;
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
 }
 
-/* Optional: make link clicks feel smooth */
-a {
-  transition: color 0.3s ease;
+.gallery-item img:hover {
+  transform: scale(1.03);
 }

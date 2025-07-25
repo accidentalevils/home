@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Accidental Evils</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="crownClear.png" />
+
+</head>
+<script>
+  // Fade in on page load
+  document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("fade-in");
+  });
+
+  // Fade out on link click (for internal nav only)
+  document.querySelectorAll("a[href]").forEach(link => {
+    const url = new URL(link.href);
+    const isInternal = location.hostname === url.hostname;
+
+    if (isInternal) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = this.getAttribute("href");
+        document.body.classList.remove("fade-in");
+        document.body.style.opacity = 0;
+        setTimeout(() => {
+          window.location.href = target;
+        }, 300); // match transition time
+      });
+    }
+  });
+</script>
+
+<body>
+     <header>
+    <img src="crownClear.png" alt="Accidental Evils Logo" class="small-logo" />
+    <nav>
+      <a href="index.html">home.</a>
+      <a href="past.html">past.</a>
+      <a href="comingSoon.html">future.</a>
+      <a href="about.html">about.</a>
+      <a href="contact.html">contact.</a>
+
+      <!-- <a href="comingSoon.html">contact.</a> -->
+    </nav>
+  </header>
+
+  <main>
+    <h1>past works.</h1>
+     <div class="gallery">
+    <div class="gallery-item"><img src="gallery/image1.jpg" alt="Artwork 1"></div>
+    <div class="gallery-item"><img src="gallery/image2.jpg" alt="Artwork 2"></div>
+    <div class="gallery-item"><img src="gallery/image3.jpg" alt="Artwork 3"></div>
+    <div class="gallery-item"><img src="gallery/image4.jpg" alt="Artwork 4"></div>
+    <div class="gallery-item"><img src="gallery/image5.jpg" alt="Artwork 5"></div>
+    <div class="gallery-item"><img src="gallery/image6.jpg" alt="Artwork 6"></div>
+    <!-- Add or remove as needed -->
+  </div>
+
+
+  <script>
+    const video = document.getElementById('logoVideo');
+    video.addEventListener('ended', () => {
+      video.removeAttribute('autoplay');
+    });
+
+    video.addEventListener('click', () => {
+      video.play();
+    });
+  </script>
+</body>
+</html>
