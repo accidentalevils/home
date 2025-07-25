@@ -188,13 +188,20 @@ p {
 }
 
 
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
+.gallery-columns {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
   padding: 40px 10%;
-  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.gallery-column {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 300px;
 }
 
 .gallery-item img {
@@ -205,6 +212,7 @@ p {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
 }
+
 
 .gallery-item img:hover {
   transform: scale(1.03);
