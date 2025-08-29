@@ -7,75 +7,89 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="crownClear.png" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-
-
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 </head>
-<script>
-  // Fade in on page load
-  document.addEventListener("DOMContentLoaded", () => {
-    document.body.classList.add("fade-in");
-  });
-
-  // Fade out on link click (for internal nav only)
-  document.querySelectorAll("a[href]").forEach(link => {
-    const url = new URL(link.href);
-    const isInternal = location.hostname === url.hostname;
-
-    if (isInternal) {
-      link.addEventListener("click", function (e) {
-        e.preventDefault();
-        const target = this.getAttribute("href");
-        document.body.classList.remove("fade-in");
-        document.body.style.opacity = 0;
-        setTimeout(() => {
-          window.location.href = target;
-        }, 300); // match transition time
-      });
-    }
-  });
-</script>
 
 <body>
-    <div class="MainText">
-  <div class="video-wrapper">
-    <video id="logoVideo" id="logoVideo"
-  autoplay
-  muted
-  playsinline
-  preload="auto"
-  webkit-playsinline
-  tabindex="-1"
->
-      
-      <source src="crownSpinning.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+  <div class="MainText">
+    <div class="crown-wrapper">
+      <img id="crown" src="/spinning/crownSpinning_200.png" alt="Spinning Crown" />
+    </div>
+
+    <h2>brooklyn based classical theater</h2>
+    <h1>ACCIDENTAL EVILS</h1>
+
+    <nav>
+      <a href="past.html">past.</a>
+      <a href="comingSoon.html">future.</a>
+      <a href="about.html">about.</a>
+      <a href="contact.html">contact.</a>
+    </nav>
   </div>
 
-  <h2>brooklyn based classical theater</h2>
-  <h1>ACCIDENTAL EVILS</h1>
+  <br><br>
+  <!-- <p><i>get ready to imitate the sun with us</i></p> -->
 
-  <!-- <hr /> -->
-
-  <nav>
-    <a href="past.html">past.</a>
-      <a href="comingSoon.html">future.</a>
-    <a href="about.html">about.</a>
-    <a href="contact.html">contact.</a>
-  </nav>
-    </div>
-<br><br>
-    <p><i>get ready to imitate the sun with us</i></p>
   <script>
-    const video = document.getElementById('logoVideo');
-    video.addEventListener('ended', () => {
-      video.removeAttribute('autoplay');
+    // ---------- Fade in/out ----------
+    document.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
     });
 
-    video.addEventListener('click', () => {
-      video.play();
+    document.querySelectorAll("a[href]").forEach(link => {
+      const url = new URL(link.href);
+      const isInternal = location.hostname === url.hostname;
+      if (isInternal) {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = this.getAttribute("href");
+          document.body.classList.remove("fade-in");
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location.href = target;
+          }, 300);
+        });
+      }
     });
-  </script>
+
+    // ---------- Crown PNG animation ----------
+  const crown = document.getElementById("crown");
+
+  let frame = 200;          // starting frame number
+  const totalFrames = 75;   // how many frames you exported
+  const fps = 24;
+  let playing = false;
+  let timer = null;
+
+  // generate the filename for a given frame
+  const framePath = (f) => `spinning/crownSpinning_${f}.png`;
+
+  function playAnimation() {
+    if (playing) return;
+    playing = true;
+    frame = 200; // reset to first frame in your sequence
+    crown.src = framePath(frame);
+
+    timer = setInterval(() => {
+      frame++;
+      if (frame >= 200 + totalFrames) {
+        clearInterval(timer);
+        playing = false;
+      } else {
+        crown.src = framePath(frame);
+      }
+    }, 1000 / fps);
+  }
+
+  // autoplay once on load
+  document.addEventListener("DOMContentLoaded", () => {
+    playAnimation();
+  });
+
+  // replay on click
+  crown.addEventListener("click", () => {
+    playAnimation();
+  });
+</script>
 </body>
 </html>

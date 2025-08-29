@@ -39,21 +39,11 @@
 
   
     <div class="MainText">
-  <div class="video-wrapper">
-    <video id="logoVideo" id="logoVideo"
-  autoplay
-  muted
-  playsinline
-  preload="auto"
-  webkit-playsinline
-  tabindex="-1"
->
-      <source src="crownSpinning.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-  </div>
+<div class="crown-wrapper">
+      <img id="crown" src="/spinning/crownSpinning_200.png" alt="Spinning Crown" />
+    </div>
 
-  <h1>coming soon</h1>
+  <h1>Henry IV pt 1 <br>coming soon</h1>
 
   <!-- <hr /> -->
 
@@ -62,14 +52,44 @@
   </nav>
     </div>
   <script>
-    const video = document.getElementById('logoVideo');
-    video.addEventListener('ended', () => {
-      video.removeAttribute('autoplay');
-    });
+    const crown = document.getElementById("crown");
 
-    video.addEventListener('click', () => {
-      video.play();
-    });
+  let frame = 200;          // starting frame number
+  const totalFrames = 75;   // how many frames you exported
+  const fps = 24;
+  let playing = false;
+  let timer = null;
+
+  // generate the filename for a given frame
+  const framePath = (f) => `spinning/crownSpinning_${f}.png`;
+
+  function playAnimation() {
+    if (playing) return;
+    playing = true;
+    frame = 200; // reset to first frame in your sequence
+    crown.src = framePath(frame);
+
+    timer = setInterval(() => {
+      frame++;
+      if (frame >= 200 + totalFrames) {
+        clearInterval(timer);
+        playing = false;
+      } else {
+        crown.src = framePath(frame);
+      }
+    }, 1000 / fps);
+  }
+
+  // autoplay once on load
+  document.addEventListener("DOMContentLoaded", () => {
+    playAnimation();
+  });
+
+  // replay on click
+  crown.addEventListener("click", () => {
+    playAnimation();
+  });
+
   </script>
 </body>
 </html>

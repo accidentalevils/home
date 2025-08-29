@@ -234,6 +234,15 @@ video::-moz-media-controls {
   display: none !important;
 }
 
+.crown-wrapper img {
+  width: 400px; /* adjust size */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  margin-top:20px;
+}
+
+
 
 /* Tablet view: 2 columns, less spacing */
 @media (max-width: 900px) {
