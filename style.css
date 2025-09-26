@@ -274,3 +274,219 @@ video::-moz-media-controls {
     margin-bottom: 10px;
   }
 }
+
+
+/* Button Styling */
+.button-wrapper {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
+  color: #fff;
+  background-color: #6780b5;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #4f6390;
+  transform: translateY(-2px);
+}
+
+.btn2 {
+  display: inline-block;
+  padding: 12px 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1em;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #6780b5;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: border-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn2:hover {
+  border-color: #a6bae9;
+  color: #a6bae9;
+  transform: translateY(-2px);
+}
+
+
+
+/* -------------------------------
+   Henry IV Auditions Page Styling
+---------------------------------*/
+
+.henryiv-page {
+  background: #000000;
+  background-size: 120px;
+  color: #b8c9e6;
+}
+
+/* Main content area */
+.henryiv-page main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 30px;
+  padding-top: 0;
+  background: rgba(0, 0, 0);
+  border: 1px solid #6780b580;
+  /* border-radius: 12px; */
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  text-align: center;
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+}
+
+/* Headings */
+.henryiv-page h1 {
+  font-size: 2.2em;
+  color: #b8c9e6;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.henryiv-page h2 {
+  font-size: 1.3em;
+  color: #a6bae9;
+  margin: 35px 0 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 2px solid #6780b5;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+/* Paragraphs */
+
+.henryiv-page main p {
+  text-align: left;
+  padding: 0 8%;   /* adjust as needed, e.g. 5% or 10% */
+  margin: 20px auto;
+  line-height: 1.6;
+  color: #9baed6;
+  max-width: 800px; /* keeps lines from getting too wide */
+}
+
+.henryiv-page main p.centered {
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Buttons */
+.henryiv-page .button-wrapper {
+  margin: 20px 0;
+}
+
+.henryiv-page .btn2 {
+  display: inline-block;
+  padding: 12px 30px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05em;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #6780b5;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.henryiv-page .btn2:hover {
+  border-color: #a6bae9;
+  color: #a6bae9;
+  transform: translateY(-2px);
+}
+
+/* Social icon styling */
+.henryiv-page .social-icon {
+  font-size: 28px;
+  color: #b8c9e6;
+  margin-top: 20px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.henryiv-page .social-icon:hover {
+  color: #a6bae9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .henryiv-page main {
+    padding: 5px 20px;
+    margin: 5% auto;
+  }
+
+  .henryiv-page h1 {
+    font-size: 1.8em;
+  }
+
+  .henryiv-page h2 {
+    font-size: 1.1em;
+  }
+
+  .henryiv-page main p {
+    font-size: 1em;
+  }
+}
+
+/* Henry IV Banner */
+.henryiv-page .henryiv-banner {
+  position: relative;
+  width: 100%;
+}
+
+.henryiv-page .henryiv-banner img {
+  width: 100%;
+  height: auto; /* preserves aspect ratio */
+  display: block;
+}
+
+/* Overlay text */
+.henryiv-page .henryiv-banner-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.henryiv-page .henryiv-banner-text h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  color: #fff;
+  background: rgba(10, 10, 10, 0.55); /* readable overlay */
+  padding: 8px 16px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .henryiv-page .henryiv-banner-text h1 {
+    font-size: 1.5em;
+    padding: 6px 12px;
+  }
+}
+
+/* Bold text inside Henry IV page */
+.henryiv-page main b {
+  font-weight: 700;            /* keeps it bold */
+  color: #d6d7ef;              /* makes it pop brighter against the dark bg */
+  background: rgba(60, 75, 107, 0.25); /* subtle blue highlight */
+  padding: 2px 4px;            /* little breathing room */
+  border-radius: 3px;          /* soft edges */
+}
