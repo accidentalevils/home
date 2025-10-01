@@ -305,7 +305,7 @@ video::-moz-media-controls {
   padding: 12px 28px;
   font-family: 'Playfair Display', serif;
   font-size: 1.1em;
-  color: #fff;
+  color: #bfc1da;
   background-color: transparent;
   border: 2px solid #6780b5;
   border-radius: 6px;
@@ -394,7 +394,7 @@ video::-moz-media-controls {
   padding: 12px 30px;
   font-family: 'Playfair Display', serif;
   font-size: 1.05em;
-  color: #fff;
+  color: #b0c0e3;
   background-color: transparent;
   border: 2px solid #6780b5;
   border-radius: 6px;
@@ -408,6 +408,18 @@ video::-moz-media-controls {
   color: #a6bae9;
   transform: translateY(-2px);
 }
+
+
+.henryiv-page .button-wrapper p.subbutton-note {
+  margin-top: 6px;
+  font-size: 0.75em;
+  font-style: italic;
+  color: #9baed6;
+  text-align: center;
+  line-height: 1.2;
+}
+
+
 
 /* Social icon styling */
 .henryiv-page .social-icon {
