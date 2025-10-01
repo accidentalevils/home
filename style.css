@@ -327,7 +327,7 @@ video::-moz-media-controls {
 ---------------------------------*/
 
 .henryiv-page {
-  background: #000000;
+  background: #0a0a0a;
   background-size: 120px;
   color: #b8c9e6;
 }
@@ -338,7 +338,7 @@ video::-moz-media-controls {
   margin: 0 auto;
   padding: 40px 30px;
   padding-top: 0;
-  background: rgba(0, 0, 0);
+  background: #0a0a0a;
   border: 1px solid #6780b580;
   /* border-radius: 12px; */
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
